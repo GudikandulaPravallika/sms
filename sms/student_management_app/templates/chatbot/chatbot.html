@@ -1,0 +1,121 @@
+<!-- chatbot/templates/chatbot/chatbot.html -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .chat-header h1 {
+        margin: 0;
+    }
+
+    .chat-body {
+        padding: 20px;
+    }
+
+    .query-form {
+        margin-bottom: 20px;
+    }
+
+    .query-form label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .query-form input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        padding-bottom:5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .query-form button[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top:25px;
+        
+    }
+
+    .query-form button[type="submit"]:hover {
+        background-color: #3e8e41;
+    }
+
+    .chat-log {
+        padding: 20px;
+    }
+
+    .chat-log .message {
+        margin-bottom: 20px;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .chat-log .message:last-child {
+        border-bottom: none;
+    }
+
+    .chat-log .user-message {
+        background-color: #f7f7f7;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .chat-log .bot-message {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="container">
+    <div class="chat-header">
+        <h1>Let's Talk😊</h1>
+    </div>
+    <div class="chat-body">
+        <form class="query-form" method="post">
+            {% csrf_token %}
+            <label for="user_input">Ask a question:</label>
+            <input type="text" name="user_input" id="user_input">
+            <button type="submit">Submit</button>
+        </form>
+        <div class="chat-log">
+            {% if user_input %}
+            <div class="message">
+                <div class="user-message">
+                    <p>User: {{ user_input }} </p>
+                </div>
+            </div>
+            <div class="message">
+                <div class="bot-message">
+                    <p> Bot: {{ response }} </p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <style>
+        body {
+            font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #34ebba, #6a11cb);/* Updated background color */
+            color: white;
+        }
+        .navbar {
+            background-color: #2980b9; /* Navbar background color */
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .navbar .brand {
+            font-size: 1.5em;
+            color: white;
+            text-decoration: none;
+        }
+        .navbar .brand:hover {
+            color: #ecf0f1;
+        }
+        .navbar .nav-links {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+        }
+        .navbar a:hover {
+            background-color: #1abc9c; /* Hover background color */
+        }
+        .content {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9); /* Content background color */
+            color: #333;
+            padding: 70px 70px;
+            border-radius: 90px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          
+        }
+        .content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="brand">School Management System</a>
+        <div class="nav-links">
+            <a href="/login">Login</a>
+            <a href="/chat">Chat</a>
+            <a href="/contact">Contact Us</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Welcome to Our Educational Website</h1>
+        <p>An educational website is a huge interactive platform to present various information for different types of people: future students, current students, teachers, parents, those who want to get a new profession, etc. All the sections have to be well-balanced and organized so users can easily find everything they need.</p>
+    </div>
+</body>
+</html>
+
+{% endblock content %}
